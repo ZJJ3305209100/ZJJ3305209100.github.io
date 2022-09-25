@@ -1,39 +1,59 @@
-
 <!doctype html>
 <html lang="en">
  <head>
- <meta charset="utf-8">
- <title>在HTML页面的标题h1元素诞生之前，运行三段代码, javaScript快速入门</title>
- <script>
-	//第1段代码，实现计算和输出
-	var price = 10; 
-	var discount = 0.1;
-	var total = price - (price * discount );
-	var output = "总共支出："+ total + " 元。" ;
-	alert(output);
-	//第2段代码，实现循环计算和输出
-	var count = 10;
-	total = 0 ;
-	while (count > 0) {
-	 total += count
-	 count = count - 1;
-	}
-	output = "10以内的整数之和是：" + total + " !" ;
-	alert(output);
-	//第3段代码，实现判断计算和输出
-	var person = {name: "TaiDi", isMale:true , weight: 75};
-	//上面和下面语句，涉及对象变量和点语法，若感觉不好理解，可以暂时忽略语法细节。
-	output = "姓名：" + person.name + "\n"  + "体重:" + person.weight +" KG ." ;
-	if (person.isMale) {
-	 output +="\n" + "性别：男"  ;
-	} else {
-	 output +="\n" + "性别：女"  ;
-	}
-	alert(output);
- </script>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="King">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="欢迎来到王的主页！">
+  <audio id="bgmMusic" src="小仓奈奈 - Take me hand(抖音热搜版).mp3" autoplay="autoplay" loop="loop" preload="auto" type="audio/mp3"></audio>
+  <title>王的主页</title>
  </head>
+		<style> 
+		  header{
+				background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(background.jpg);
+				height: 100vh;	/*使图片占满屏幕*/
+				background-size: cover;
+				background-position: center;
+				}
+		ul{
+            float: left;
+            margin: 20px;
+        }
+        ul li{
+            display: inline-block;/*在元素之后不添加换行符，因此该元素可以位于其他元素旁边，实现水平显示列表项*/
+        }
+        ul li a{
+            text-decoration: none;
+            color: #abc;
+            padding: 6px 30px;
+            border: 1px solid transparent;/*使边框颜色透明*/
+            transition: .6s ease;/*设置过度效果*/
+            border-radius: 20px;/*设置圆角*/
+        }
+		ul li a:hover{		/*鼠标悬停在li的a上时的样式*/
+            background-color: #fff;
+
+        }
+         .title{position:absolute;
+		         top:40%;
+                 left:38%;
+				 font-size:25px;};
+		 </style>
  <body>
-  <h1>每次弹窗实现一段JavaScript代码，共实现三次！</h1>
-  <!--为何上面h1元素的输出，在JavaScript运行时没有出现？-->
+  <header>
+        <div class="main">
+            <ul>
+                <li ><a href="https://zjj3305209100.github.io/">首页</a></li>
+                <li><a href="https://github.com/ZJJ3305209100.html" target="_blank">简介</a></li>
+                <li><a target="_blank">日常作业</a></li>
+                <li><a href="https://github.com/ZJJ3305209100?tab=repositories" target="_blank">我的仓库</a></li>
+                
+            </ul>
+        </div>
+        <div class="title">
+            <h1><span style="color: red;">King's</span> Homepage</h1>
+        </div>
+    </header>
  </body>
 </html>
