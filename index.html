@@ -9,48 +9,54 @@
   <audio id="bgmMusic" src="小仓奈奈 - Take me hand(抖音热搜版).mp3" autoplay="autoplay" loop="loop" preload="auto" type="audio/mp3"></audio>
   <title>王的主页</title>
  </head>
-		<style> 
-		  header{
+	<style> 
+		header{
 				background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(background.jpg);
 				height: 100vh;	/*使图片占满屏幕*/
 				background-size: cover;
 				background-position: center;
 				}
+		p{
+				font-size:30px;
+				color:red;
+		}
 		ul{
-            float: left;
-            margin: 20px;
+				float: left;
+				margin: 20px;
         }
         ul li{
-            display: inline-block;/*在元素之后不添加换行符，因此该元素可以位于其他元素旁边，实现水平显示列表项*/
+                display: inline-block;/*在元素之后不添加换行符，因此该元素可以位于其他元素旁边，实现水平显示列表项*/
         }
         ul li a{
-            text-decoration: none;
-            color: #abc;
-            padding: 6px 30px;
-            border: 1px solid transparent;/*使边框颜色透明*/
-            transition: .6s ease;/*设置过度效果*/
-            border-radius: 20px;/*设置圆角*/
+				text-decoration: none;
+				color: #abc;
+				padding: 6px 30px;
+				border: 1px solid transparent;/*使边框颜色透明*/
+				transition: .6s ease;/*设置过度效果*/
+				border-radius: 20px;/*设置圆角*/
         }
 		ul li a:hover{		/*鼠标悬停在li的a上时的样式*/
-            background-color: #fff;
+                background-color: #fff;
 
         }
-         .title{position:absolute;
+        .title{  position:absolute;
 		         top:40%;
                  left:38%;
-				 font-size:25px;};
-		 </style>
+				 font-size:25px;
+			   };
+	</style>
  <body>
   <header>
         <div class="main">
             <ul>
                 <li ><a href="https://zjj3305209100.github.io/">首页</a></li>
                 <li><a href="https://github.com/ZJJ3305209100.html" target="_blank">简介</a></li>
-                <li><a href="日常作业.html"  target="_blank">日常作业</a></li>
+                <li><a href="日常作业.html"  target="_blank">每周作业</a></li>
                 <li><a href="https://github.com/ZJJ3305209100?tab=repositories" target="_blank">我的仓库 </a></li>
+                <p>请点击作业查看每周作业</p>
             </ul>
         </div>
-        <div class="title">
+      <div class="title">
             <h1><span style="color: red;">King's</span> Homepage</h1>
         </div>
     </header>
