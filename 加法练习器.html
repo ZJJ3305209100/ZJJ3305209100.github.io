@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="King" content="">
+  <title>10以内加法练习</title>
+  <style type="text/css">
+	h1 {
+		text-align:center;
+		font-size:3em;
+	}
+	p{
+	    text-align:center;
+		font-size:20px;
+	}
+	div{
+		margin:30px;
+		text-align:center;
+		font-size:2em;
+	}
+	input{
+		width:50px;
+		height:40px;
+		font-size:30px;
+		margin:20px;
+		text-align:center;
+	}
+  </style>
+ </head>
+ <body>
+	<h1>加法练习器</h1>
+	<p>三秒跳转下一题</p>
+	<div id = "question" >
+		<input id = "opNum1">
+		<span > + </span>
+		<input id = "opNum2">
+		<span > = </span>
+	</div>
+	<div id = "answer" >
+		A. <input type = "button" id = "answerA" value = "">
+		B. <input type = "button" id = "answerB" value = "">
+		C. <input type = "button" id = "answerC" value = "">
+		D. <input type = "button" id = "answerD" value = "">
+	</div>
+
+	<script type="text/javascript">
+		var opNum1Dom = document.querySelector("input#opNum1");
+		var opNum2Dom = document.querySelector("input#opNum2");
+		/*将answer中的input抓取在answerDoms数组中*/
+		var answerDoms = document.querySelectorAll("div#answer input ");
+	    
+		tryNext() ;
+
+		setInterval(tryNext , 3 *1000) ;
+
+	function tryNext(){	
+		/*生成两个随机数并放入题目中*/
+		var opNum1 = parseInt ( 10 * Math.random () );
+		var opNum2 = parseInt ( 10 * Math.random () );
+
+		opNum1Dom.value = opNum1 ;
+		opNum2Dom.value = opNum2 ;				
+		
+
+		/*for循环生成随机答案赋给answerABCD*/
+		for (i=0 ; i<4 ; i++ ){
+			var answer = parseInt ( 20 * Math.random () );
+			answerDoms[i].value = answer;
+
+			/*设置每个答案的点击结果，正确弹出Right，错误弹出Wrong*/
+			answerDoms[i].onclick = function(){
+				var right = opNum1 + opNum2;
+				var sel = parseInt(this.value);
+				if (sel == right)
+				{
+					alert("恭喜你回答正确")
+				} else{
+					alert("回答错误再接再厉哦")
+				}
+			} ;
+		}			
+		
+		/*使正确答案在ABCD中随机显示*/
+		var ram = parseInt ( 4 * Math.random () );
+		if (ram == 0){
+			answerDoms[0].value = opNum1 + opNum2 ;
+		}else if(ram == 1){
+			answerDoms[1].value = opNum1 + opNum2 ;	
+		}else if(ram == 2){
+			answerDoms[2].value = opNum1 + opNum2 ;
+		}else if(ram == 3){
+			answerDoms[3].value = opNum1 + opNum2 ;
+		}	
+
+	} // End  of tyrNext function
+
+	</script>
+
+ </body>
+</html> 

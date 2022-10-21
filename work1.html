@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>猜数游戏</title>
+ </head>
+ <style>
+        header{
+				background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(background.jpg);
+				height: 100vh;	/*使图片占满屏幕*/
+				background-size: cover;
+				background-position: center;
+				}
+        p{
+			text-align:center;
+			color:#abf;
+            position:absolute;
+			top:20%;
+			left:41%;
+			font-size:30px;
+			}
+		div{
+			position:absolute;
+			top:40%;
+			left:45%
+		}
+ </style>
+ <header>
+ <body>
+ <div>
+ <input type="button"  value="点击开始游戏！" onclick="call()">
+ </div>
+ <p>你一共有十次机会！</p>
+ </input>
+  <script>
+  function call(){
+	  var num1 = Math.floor(Math.random()*100) ;
+	  var i=0;
+	  var time=10;
+	while(i<10){
+		var guess = prompt("从0到99，你赌几？");
+		guess = parseInt(guess);
+		if (num1===guess)
+		{
+		alert("你赢了 !");
+		break;
+		}
+		else if(num1>guess)
+		{
+			alert("小了");
+			i++;
+			time--;
+			alert("还有"+time+"次机会！");
+			if(time==0){
+			alert("很可惜，你输了！");
+			}
+		}
+		else
+		{
+			 alert("大了");
+			 i++;
+			 time--;
+			alert("还有"+time+"次机会！");
+			if(time==0){
+			alert("很可惜，你输了！");
+			}
+		}
+	}}
+	
+  </script>
+ </body>
+ </header>
+</html>
