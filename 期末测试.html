@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+	body{
+	    margin:0;
+		overflow:hidden;
+		background-color:rgba(193, 255, 213, 0.1);
+		font-size: 15px;
+		font-family:黑体;
+		}
+		div{
+			width: 100px;
+			background-color: rgba(100, 100, 100, 0.1);
+			display: inline-block;
+			margin: 10px;
+			color: aqua;
+			text-align: center;
+			padding: 20px;
+			position: absolute;
+			border: 2px solid lightpink;
+			border-radius: 100%;
+			transition:all 1.5s; 
+		}
+		div:hover{
+		background-color:black;}
+	</style>
+	<body>
+		<script type="text/javascript">
+			var s='绝代有佳人，幽居在空谷。自云良家子，零落依草木！';
+			var a='床前明月光，疑是地上霜。举头望明月。低头思故乡！';
+			for(var i=0;i<100;i++){
+			var divDom=document.createElement('div');
+			divDom.textContent=s;
+		    randPositionDiv(divDom);
+			divDom.onmouseover=function (){
+		        randPositionDiv(this);
+		    };
+			document.body.appendChild(divDom);
+			}
+			for(var i=0;i<100;i++){
+				var divDom1=document.createElement('div');
+				divDom1.textContent=a;
+				randPositionDiv1(divDom1);
+				divDom1.onmouseover=function(){randPositionDiv1(this)};
+				document.body.appendChild(divDom1);
+			}
+			function randPositionDiv(dom){
+				var x = Math.floor(Math.random()*600);
+				var y = Math.floor(Math.random()*window.innerHeight);
+				dom.style.left=x+'px';
+				dom.style.top=y+'px';
+				}
+				function randPositionDiv1(dom){
+					var x = Math.floor(Math.random()*(1000-100)+700);
+					var y = Math.floor(Math.random()*window.innerHeight);
+					dom.style.left=x+'px';
+					dom.style.top=y+'px';
+					}
+		</script>
+	</body>
+</html>
