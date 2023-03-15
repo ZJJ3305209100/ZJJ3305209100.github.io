@@ -1,74 +1,306 @@
+
 <!doctype html>
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus®">
-  <meta name="Author" content="King">
-  <meta name="Keywords" content="">
-  <meta name="Description" content="欢迎来到王的主页！">
-  <title>王的主页</title>
+  <title>我的主页</title>
+   <link href="style.css" rel="stylesheet" type="text/css">
  </head>
-	<style> 
-		header{
-				background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(background.jpg);
-				height: 100vh;	/*使图片占满屏幕*/
-				background-size: cover;
-				background-position: center;
-				}
-		p{
-				font-size:30px;
-				color:red;
-		}
-		ul{
-				float: left;
-				margin: 20px;
-        }
-        ul li{
-                display: inline-block;/*在元素之后不添加换行符，因此该元素可以位于其他元素旁边，实现水平显示列表项*/
-        }
-        ul li a{
-				text-decoration: none;
-				color: #abc;
-				padding: 6px 30px;
-				border: 1px solid transparent;/*使边框颜色透明*/
-				transition: .6s ease;/*设置过度效果*/
-				border-radius: 20px;/*设置圆角*/
-        }
-		ul li a:hover{		/*鼠标悬停在li的a上时的样式*/
-                background-color: #fff;
 
-        }
-		audio{
-		      position:absolute;
-			  top:90%;
-			  left:60%;
+<style>
+		@font-face{
+			font-family:mvboli;
+			src:url(mvboli.ttf);
+		 }
+		@font-face{
+			font-family:blankit-8mw2b;
+			src:url(blankit-8mw2b.ttf);
 		}
-		.code{
-		      position:absolute;
-			  top:66%;
-			  left:0%
+		@font-face{
+			font-family:xingcao;
+			src:url(yezigongchangzuihanjiangxingcao.ttf);
 		}
-        .title{  position:absolute;
-		         top:40%;
-                 left:38%;
-				 font-size:25px;
-			   };
-	</style>
+		@font-face{
+			font-family:ruantang;
+			src:url(xiaoxiongruantangweiweitianziti.ttf);
+		 }
+	
+	    *{ 
+			 margin:0px; 
+			 padding:0px;
+		}
+	
+		body{
+			 height:100%;
+			 width:100%;
+			 position:relative;
+			 background:url("background.jpg") no-repeat;
+			 background-size:cover;
+		}
+		#title{
+			height:80px;
+			padding:10px;
+			margin:0px 50px;
+			position:absolute;
+			top:60px;
+			font-size:80px;
+			font-weight:600;
+			font-family:blankit-8mw2b;
+			color:rgba(244, 244, 229, 0.8);
+		 }
+	
+		 
+		#song{
+			 font-family:"xingcao";
+			 position:absolute;
+			 top:230px;
+			 font-size:30px;
+			 color:#f4f4e5;
+			 width:610px;
+			 height:75px;
+			 padding:10px;
+			 margin:0px 50px;
+			 border:2.5px solid rgba(244, 244, 229, 0.7);
+			 border-radius:20px;
+			 letter-spacing:2px;
+			 line-height:1.2em;
+			 background: linear-gradient(
+				90deg,
+				#a98d67,
+				#395f84,
+				#bf9830,
+				#986a17,
+				#256a87,
+				#1f6b75,
+				#a98d67
+			);
+			opacity:0.65;
+			background-size:300%;
+			animation: mySong 6s linear infinite;
+		}
+		@keyframes mySong {
+			from {
+				background-position: 0%;
+			}
+	
+			to {
+				background-position: 300%;
+			}
+		}
+		#song:hover{
+			animation-play-state:paused;
+			cursor:pointer;
+		}
+	
+		#nav{
+		     position:absolute;
+			 top:40px;
+			 right:250px;
+			 font-size:25px;
+			 font-family:ruantang;
+			 width:490px;
+			 height:40px; 
+			 margin-top:0;
+		}
+	
+		#nav ul{ 
+			 list-style:none;
+			 float:right; 
+		}
+	
+		#nav ul li{ 
+			 float:left; 
+			 line-height:40px; 
+			 text-align:center; 
+	
+			 background-color:white;
+			 opacity:0.5;
+			 margin:5px;
+			 border-radius:10px;
+		}
+		#nav ul li a{ 
+			 text-decoration:none; 
+			 color:#000; 
+			 display:block;
+			 padding:0px 14px;
+			 line-height:40px;
+		}
+		#nav ul li a:hover{ 
+			 color:#FFF; 
+			 background:#333;
+			 border-radius:10px;
+		}
+		 
+		#myBlog{
+			text-align:center;
+			position:absolute;
+			top:450px;
+			left:41%;
+		 }
+		
+	
+		div#myBlog input{
+			font-family:mvboli;
+			color:rgba(0, 0, 33, 0.6);
+			height:78px;
+			width:200px;
+			border:5px solid rgb(85, 102, 136);
+			border-radius:25px;
+			background:rgb(186, 192, 187, 0.7);
+			font-size:40px;
+			}
+	
+		div#myBlog input:hover{
+			color:rgba(244, 244, 229, 0.8); 
+			border:5px solid rgba(157, 143, 154, 0.8);
+			background:#334c65;
+			cursor:pointer;
+			opacity:0.65;
+		 }
+	
+		 #qrcode{
+			position:fixed;
+			left:90%;
+			top:85%;
+			width:80px;
+			height:80px;	
+		 }	 
+	
+		/* #icon{     
+			width:100px;     
+			height: 100px;
+			float:right;
+			position:absolute;
+			top:100px;
+			right:5%;
+			background: url(./img/Y.png) no-repeat;    
+			border-radius:140px;
+			animation:run 4s linear 2s infinite;
+		 }
+				
+		 #icon:hover{     
+			animation-play-state:paused;
+		 }
+		
+		 @keyframes run{	
+			from{     
+				transform:rotate(360deg);     
+			}     
+			to{     
+				transform:rotate(0deg);   /* 360-0 向左旋转 0-360 向右旋转 */
+			
+		#page1 #rallback {
+			/*css3动画无限制的旋转*/
+			-webkit-animation: music_disc 4s linear infinite;
+			animation: music_disc 4s linear infinite;
+			/*-webkit-animation-direction:alternate;*/
+			/*//平滑的过渡---反方向运动*/
+		}
+		
+		/*  page1旋转暂停 animation-play-state属性 当你想在动画执行过程中暂停，并且接下来让动画接着执行。这时CSS的animation-play-state属性是非常有用的。你可以可以通过JavaScript像这样更改CSS(注意你的前缀)： element.style.webkitAnimationPlayState="paused";
+		element.style.webkitAnimationPlayState="running";
+		 */
+		
+		/*css3动画的旋转*/
+		@-webkit-keyframes music_disc {
+			0% {
+				-webkit-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				-o-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				-ms-transform: rotate(360deg);
+				-o-transform: rotate(360deg);
+			}}
+</style>
  <body>
-  <header>
-        <div class="main">
-            <ul>
-                <li ><a href="https://zjj3305209100.github.io/">首页</a></li>
-                <li><a href="https://github.com/ZJJ3305209100.html" target="_blank">简介</a></li>
-                <li><a href="日常作业.html"  target="_blank">每周作业</a></li>
-                <li><a href="https://github.com/ZJJ3305209100?tab=repositories" target="_blank">我的仓库 </a></li>
-                <p>请点击作业查看每周作业</p>
-		<audio id="bgmMusic" src="小仓奈奈 - Take me hand(抖音热搜版).mp3" autoplay="autoplay" loop="loop" preload="auto" type="audio/mp3" controls>
-            </ul>
-        </div>
-        <div class="title">
-            <h1><span style="color: red;">King's</span> Homepage</h1>
-       </div>
-    </header>
+	  <div id = "nav">
+		<ul>
+		    <li ><a href="https://zjj3305209100.github.io/">首页</a></li>
+		    <li><a href="https://github.com/ZJJ3305209100.html" target="_blank">简介</a></li>
+		    <li><a href="日常作业.html"  target="_blank">日常作业</a></li>
+		    <li><a href="https://github.com/ZJJ3305209100?tab=repositories" target="_blank">我的仓库 </a></li>
+		</ul>
+	  </div>
+
+	 <div id = "title"></div>
+
+	 <div id = "song">
+		<p>song</p>
+	 </div>
+
+	 <!-- <div id = "icon">
+		 <sec\extensions\bianxianyang\htmlplay\0.0.10\1637899384458\Microsoft.VisualStudio.Services.Icons.Defaulttion class="u-audio">
+					<audio src="./小仓奈奈 - Take me hand(抖音热搜版).mp3" autoplay="autoplay" id="music"  preload loop="loop"></audio>
+				</section></div> -->
+
+	<section class="u-audio">
+		<audio src="小仓奈奈 - Take me hand(抖音热搜版).mp3" autoplay="autoplay" id="music"  preload loop="loop"></audio>
+		<div id="page1">
+			<img id="rallback" src="Y.png" style="width: 120px;height: 120px;border-radius:140px;position: absolute;
+            float: right;top:150px;
+			right:5%;"></img>
+		</div>
+	</section>
+	 <div id = "myBlog">
+		<a href = "日常作业.html"><input type = "button" value = "Go!"></a>
+	 </div>
+
+	  <div>
+		<img src="qrCode.jpg" id="qrcode">
+	  </div>
+	 
+	 <script>
+
+	     var title = document.querySelector("div#title");
+	 	 title.textContent = "King'sHomepage";
+	 
+		 var song = document.querySelector("div#song");
+		 song.textContent = "少年努力的样子里，藏着一家未来的幸福时光！";
+		 window.onload = function() {
+		 	/*右上角音乐及图标*/
+		 	var flag = 1; //开启音乐
+		 	var music = document.getElementById('music');
+		 	var rallback = document.getElementById('rallback');
+		 	
+		 	window.onclick = function() {
+		 		if(flag == 1) {
+		 			music.pause(); /*音乐关闭*/
+		 			flag = 0;
+		 			rallback.style.webkitAnimationPlayState = "paused"; //旋转动画暂停
+		 		} else {
+		 			music.play(); /*音乐开启*/
+		 			flag = 1;
+		 			rallback.style.webkitAnimationPlayState = "running"; //旋转动画暂停
+		 		}
+		 	}
+		 	
+		 	/*不允许有多个onload*/
+		 	/*控制选项卡切换*/
+		 	var myTab = document.getElementById("tab"); //整个div
+		 	var myUl = myTab.getElementsByTagName("ul")[0]; //一个节点
+		 	var myLi = myUl.getElementsByTagName("li"); //数组
+		 	var myDiv = myTab.getElementsByTagName("div"); //数组
+		 	
+		 	for(var i = 0; i < myLi.length; i++) {
+		 		myLi[i].index = i;
+		 		myLi[i].onclick = function() {
+		 			for(var j = 0; j < myLi.length; j++) {
+		 				myLi[j].className = "off";
+		 				myDiv[j].className = "hide";
+		 			}
+		 			this.className = "on";
+		 			myDiv[this.index].className = "show";
+		 		}
+		 	}
+		 	
+		 }
+	 
+	 </script>
+	
+
  </body>
+
 </html>
